@@ -1,5 +1,6 @@
 package com.anthony.web.rest;
 
+import com.anthony.security.SecurityUtils;
 import com.codahale.metrics.annotation.Timed;
 import com.anthony.domain.Entry;
 import com.anthony.repository.EntryRepository;
@@ -93,12 +94,8 @@ public class EntryResource {
     @Timed
     public ResponseEntity<List<Entry>> getAllEntries(Pageable pageable, @RequestParam(required = false, defaultValue = "false") boolean eagerload) {
         log.debug("REST request to get a page of Entries");
-        Page<Entry> page;
-        if (eagerload) {
-            page = entryRepository.findAllWithEagerRelationships(pageable);
-        } else {
-            page = entryRepository.findAll(pageable);
-        }
+        Page<Entry> page =  entryRepository.findByBlogUserLoginOrderByDateDesc(SecurityUtils.getCurrentUserLogin().
+            orElse(null),pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, String.format("/api/entries?eagerload=%b", eagerload));
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }

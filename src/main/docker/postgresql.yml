@@ -1,0 +1,11 @@
+version: '2'
+services:
+    jhipster_demo_blog-postgresql:
+        image: postgres:10.4
+        # volumes:
+        #     - ~/volumes/jhipster/jhipster_demo_blog/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=jhipster_demo_blog
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

@@ -1,0 +1,36 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.anthony",
+            "nativeLanguage": "fr"
+        },
+        "jhipsterVersion": "5.7.1",
+        "applicationType": "monolith",
+        "baseName": "jhipster_demo_blog",
+        "packageName": "com.anthony",
+        "packageFolder": "com/anthony",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "h2Disk",
+        "prodDatabaseType": "postgresql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "NzU2MTQ1NDU1YWNjMGMzNWIzYzNhNWViYzk4MmQ5MGRjMWZiM2FmNzYyNDRjZTdkYjEzNThmZGJjZGY4YzIxNDM3ZTcwOGY0ZGEzMjY5YWZiY2E4ODYxMTkxNzM1YzYwZTE0NTk2Njc1MDY3NzY4NDZkMjJlZjI0MjI0M2Y2OTc=",
+        "clientFramework": "angularX",
+        "useSass": false,
+        "clientPackageManager": "npm",
+        "testFrameworks": ["protractor"],
+        "jhiPrefix": "jhi",
+        "otherModules": [],
+        "enableTranslation": true,
+        "nativeLanguage": "fr",
+        "languages": ["fr", "en"]
+    }
+}
